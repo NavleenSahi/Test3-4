@@ -18,7 +18,7 @@ class GameScene: SKScene {
 
     }
     
-    func makeOrange(xPosition:CGFloat, yPosition:CGFloat) {
+    func makeOrange(xPosition:CGFloat, yPosition:CGFloat, throwX:CGFloat, throwY:CGFloat) {
         
         // 1. create an orange sprite
         let orange = SKSpriteNode(imageNamed: "Orange")
@@ -39,7 +39,7 @@ class GameScene: SKScene {
         
         
         let throwOrange = SKAction.applyImpulse(
-            CGVector(dx:50, dy:100),
+            CGVector(dx:throwX, dy:throwY),
             duration: 0.5)
         orange.run(throwOrange)
         
@@ -80,15 +80,18 @@ class GameScene: SKScene {
         print("Starting position: \(mouseStartingPosition.x), \(mouseStartingPosition.y)")
         print("Ending position: \(mousePosition.x), \(mousePosition.y)")
         
+        // 2. calculate difference between starting and ending
+        let diffX = mousePosition.x - mouseStartingPosition.x
+        let diffY = mousePosition.y - mouseStartingPosition.y
         
-        
-        
-        
-        // make an orange in the same position as mouse click
-//        self.makeOrange(
-//            xPosition:mousePosition.x,
-//            yPosition:mousePosition.y)
-//
+ 
+        // 3. create an orange and throw it in the correct direction
+        self.makeOrange(
+            xPosition:mousePosition.x,
+            yPosition:mousePosition.y,
+            throwX: diffX,
+            throwY: diffY)
+
         
     } // end touches ended
     
