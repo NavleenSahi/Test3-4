@@ -46,6 +46,10 @@ class GameScene: SKScene {
         
     }
     
+    
+    var mouseStartingPosition:CGPoint = CGPoint(x:0, y:0)
+    
+    // MARK: Detect when finger goes down
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         // 1. detect where the person clicked
@@ -60,13 +64,37 @@ class GameScene: SKScene {
         
         // 2b. If person click tree, then make orange
         if (spriteTouched.name == "tree") {
-            // make an orange in the same position as mouse click
-            self.makeOrange(
-                xPosition:mousePosition.x,
-                yPosition:mousePosition.y)
+            self.mouseStartingPosition = mousePosition
         }
         
-    }
+    } // end touchesBegan code
+    
+    
+    // MARK: Detect when finger goes up
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        // 1. detect where the person lifted finger up
+        let touch = touches.first!
+        let mousePosition = touch.location(in:self)
+        
+        print("Starting position: \(mouseStartingPosition.x), \(mouseStartingPosition.y)")
+        print("Ending position: \(mousePosition.x), \(mousePosition.y)")
+        
+        
+        
+        
+        
+        // make an orange in the same position as mouse click
+//        self.makeOrange(
+//            xPosition:mousePosition.x,
+//            yPosition:mousePosition.y)
+//
+        
+    } // end touches ended
+    
+    
+    
+    
     
     
     
