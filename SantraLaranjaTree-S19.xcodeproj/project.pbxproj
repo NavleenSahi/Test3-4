@@ -15,6 +15,7 @@
 		9B5F289522AFFFE50028303B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B5F289322AFFFE50028303B /* Main.storyboard */; };
 		9B5F289722AFFFE60028303B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5F289622AFFFE60028303B /* Assets.xcassets */; };
 		9B5F289A22AFFFE60028303B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B5F289822AFFFE60028303B /* LaunchScreen.storyboard */; };
+		9BEBE7C822B010A8000221D4 /* Level02.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BEBE7C722B010A8000221D4 /* Level02.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9B5F289622AFFFE60028303B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B5F289922AFFFE60028303B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B5F289B22AFFFE60028303B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BEBE7C722B010A8000221D4 /* Level02.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level02.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		9B5F288822AFFFE50028303B /* SantraLaranjaTree-S19 */ = {
 			isa = PBXGroup;
 			children = (
+				9BEBE7C722B010A8000221D4 /* Level02.sks */,
 				9B5F288922AFFFE50028303B /* AppDelegate.swift */,
 				9B5F288B22AFFFE50028303B /* GameScene.sks */,
 				9B5F288D22AFFFE50028303B /* Actions.sks */,
@@ -132,6 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BEBE7C822B010A8000221D4 /* Level02.sks in Resources */,
 				9B5F289522AFFFE50028303B /* Main.storyboard in Resources */,
 				9B5F288C22AFFFE50028303B /* GameScene.sks in Resources */,
 				9B5F289722AFFFE60028303B /* Assets.xcassets in Resources */,

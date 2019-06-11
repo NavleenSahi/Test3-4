@@ -126,6 +126,21 @@ class GameScene: SKScene {
         if (skull!.intersects(ground!) == true) {
             print("SKULL HIT GROUND")
             
+            let level2Scene = SKScene(fileNamed:"Level02")
+            level2Scene!.scaleMode = .aspectFill
+            let flipTransition = SKTransition.flipVertical(withDuration: 2)
+            self.scene?.view?.presentScene(
+                level2Scene!,
+                transition: flipTransition)
+
+//            if let scene = SKScene(fileNamed: "Level02") {
+//                // Set the scale mode to scale to fit the window
+//                scene.scaleMode = .aspectFill
+//
+//                // Present the scene
+//                scene.view?.presentScene(scene)
+//            }
+            
             
         }
     }
