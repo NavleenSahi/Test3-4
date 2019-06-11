@@ -27,12 +27,17 @@ class GameScene: SKScene {
         // as where mouse is clicked
         orange.position.x = xPosition;
         orange.position.y = yPosition;
+
+        // force orange to appear in foreground
+        orange.zPosition = 99;
+        
         
         // 3. set physics for the orange
         // -- dyanmic = true
         // -- gravity = true
         // Both are true by default
         orange.physicsBody = SKPhysicsBody(circleOfRadius: orange.size.width/2)
+        
         
         // 4. Add the orange to the scene
         addChild(orange)
@@ -66,7 +71,6 @@ class GameScene: SKScene {
         if (spriteTouched.name == "tree") {
             self.mouseStartingPosition = mousePosition
         }
-        
     } // end touchesBegan code
     
     
@@ -87,8 +91,8 @@ class GameScene: SKScene {
  
         // 3. create an orange and throw it in the correct direction
         self.makeOrange(
-            xPosition:mousePosition.x,
-            yPosition:mousePosition.y,
+            xPosition:mouseStartingPosition.x,
+            yPosition:mouseStartingPosition.y,
             throwX: diffX,
             throwY: diffY)
 
