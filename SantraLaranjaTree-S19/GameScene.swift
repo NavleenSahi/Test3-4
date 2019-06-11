@@ -71,6 +71,9 @@ class GameScene: SKScene {
         if (spriteTouched.name == "tree") {
             self.mouseStartingPosition = mousePosition
         }
+        else {
+            self.mouseStartingPosition = CGPoint(x:0, y:0)
+        }
     } // end touchesBegan code
     
     
@@ -81,21 +84,27 @@ class GameScene: SKScene {
         let touch = touches.first!
         let mousePosition = touch.location(in:self)
         
-        print("Starting position: \(mouseStartingPosition.x), \(mouseStartingPosition.y)")
-        print("Ending position: \(mousePosition.x), \(mousePosition.y)")
-        
-        // 2. calculate difference between starting and ending
-        let diffX = mousePosition.x - mouseStartingPosition.x
-        let diffY = mousePosition.y - mouseStartingPosition.y
-        
- 
-        // 3. create an orange and throw it in the correct direction
-        self.makeOrange(
-            xPosition:mouseStartingPosition.x,
-            yPosition:mouseStartingPosition.y,
-            throwX: diffX,
-            throwY: diffY)
-
+        // does mouse starting position = (0,0)?
+        // if yes, then don't do anything
+        // otherwise, do something!
+        if (self.mouseStartingPosition.x != 0 &&
+            self.mouseStartingPosition.y != 0 ) {
+            
+            print("Starting position: \(mouseStartingPosition.x), \(mouseStartingPosition.y)")
+            print("Ending position: \(mousePosition.x), \(mousePosition.y)")
+            
+            // 2. calculate difference between starting and ending
+            let diffX = mousePosition.x - mouseStartingPosition.x
+            let diffY = mousePosition.y - mouseStartingPosition.y
+            
+     
+            // 3. create an orange and throw it in the correct direction
+            self.makeOrange(
+                xPosition:mouseStartingPosition.x,
+                yPosition:mouseStartingPosition.y,
+                throwX: diffX,
+                throwY: diffY)
+        }
         
     } // end touches ended
     
