@@ -11,11 +11,15 @@ import GameplayKit
 
 class GameScene: SKScene {
    
-    
+    // create a skull node
+    var skull:SKNode?
+    var ground:SKNode?
     
     override func didMove(to view: SKView) {
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
 
+        self.skull = self.childNode(withName: "skull")
+        self.ground = self.childNode(withName: "ground")
     }
     
     func makeOrange(xPosition:CGFloat, yPosition:CGFloat, throwX:CGFloat, throwY:CGFloat) {
@@ -90,8 +94,8 @@ class GameScene: SKScene {
         if (self.mouseStartingPosition.x != 0 &&
             self.mouseStartingPosition.y != 0 ) {
             
-            print("Starting position: \(mouseStartingPosition.x), \(mouseStartingPosition.y)")
-            print("Ending position: \(mousePosition.x), \(mousePosition.y)")
+//            print("Starting position: \(mouseStartingPosition.x), \(mouseStartingPosition.y)")
+//            print("Ending position: \(mousePosition.x), \(mousePosition.y)")
             
             // 2. calculate difference between starting and ending
             let diffX = mousePosition.x - mouseStartingPosition.x
@@ -108,11 +112,22 @@ class GameScene: SKScene {
         
     } // end touches ended
     
-    
-    
-    
-    
-    
-    
+    override func update(_ currentTime: TimeInterval) {
+        
+        // YOU CHOOSE WHAT THE GAME OVER CONDITION IS
+        // -- option1 : skull hits ground
+        // -- option2 : orange hits skull
+        // -- option3 : falling distance > some amount
+        // -- option4 : some other condition?
+        
+        
+        // For me, i choose option 1
+        // Detect collision between skull and ground
+        if (skull!.intersects(ground!) == true) {
+            print("SKULL HIT GROUND")
+            
+            
+        }
+    }
     
 }
