@@ -14,7 +14,8 @@ class GameScene: SKScene {
     
     
     override func didMove(to view: SKView) {
-   
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+
     }
     
     func makeOrange(xPosition:CGFloat, yPosition:CGFloat) {
@@ -35,6 +36,13 @@ class GameScene: SKScene {
         
         // 4. Add the orange to the scene
         addChild(orange)
+        
+        
+        let throwOrange = SKAction.applyImpulse(
+            CGVector(dx:50, dy:100),
+            duration: 0.5)
+        orange.run(throwOrange)
+        
         
     }
     
