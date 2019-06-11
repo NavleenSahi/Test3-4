@@ -39,9 +39,13 @@ class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         // 1. detect where the person clicked
+        let touch = touches.first!
+        let mousePosition = touch.location(in:self)
         
         // 2. make an orange in the same position as mouse click
-        self.makeOrange(xPosition: CGFloat, yPosition: CGFloat)
+        self.makeOrange(
+            xPosition:mousePosition.x,
+            yPosition:mousePosition.y)
         
     }
     
