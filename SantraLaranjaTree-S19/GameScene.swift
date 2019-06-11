@@ -52,10 +52,19 @@ class GameScene: SKScene {
         let touch = touches.first!
         let mousePosition = touch.location(in:self)
         
-        // 2. make an orange in the same position as mouse click
-        self.makeOrange(
-            xPosition:mousePosition.x,
-            yPosition:mousePosition.y)
+        // 2. if person clicked tree, then
+        // make an orange
+        
+        // 2a. What did the person click?
+        let spriteTouched = self.atPoint(mousePosition)
+        
+        // 2b. If person click tree, then make orange
+        if (spriteTouched.name == "tree") {
+            // make an orange in the same position as mouse click
+            self.makeOrange(
+                xPosition:mousePosition.x,
+                yPosition:mousePosition.y)
+        }
         
     }
     
