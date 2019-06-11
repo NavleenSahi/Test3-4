@@ -24,7 +24,8 @@ class GameScene: SKScene {
         
         // 2. set initial position of orange to be same
         // as where mouse is clicked
-        
+        orange.position.x = xPosition;
+        orange.position.y = yPosition;
         
         // 3. set physics for the orange
         // -- dyanmic = true
@@ -33,6 +34,7 @@ class GameScene: SKScene {
         
         
         // 4. Add the orange to the scene
+        addChild(orange)
         
     }
     
